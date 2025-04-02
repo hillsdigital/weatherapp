@@ -1,0 +1,253 @@
+:root {
+  --light-blue: #64b5f6;
+  --dark-blue: #1e3a5f;
+  --white: #ffffff;
+  --light-text: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 390px;
+  height: 844px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.3s ease-out;
+}
+
+.weather-card {
+  min-width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--white);
+}
+
+/* Temas */
+.light-theme {
+  background: linear-gradient(180deg, var(--light-blue) 0%, #2196f3 100%);
+}
+
+.dark-theme {
+  background: linear-gradient(180deg, var(--dark-blue) 0%, #0a1929 100%);
+}
+
+/* Diseño 1 */
+.design-1 .weather-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.design-1 .weather-icon {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 30px;
+}
+
+.design-1 .stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: var(--light-text);
+}
+
+.design-1 .temperature {
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.design-1 .weather-description {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.design-1 .location {
+  font-size: 1.2rem;
+  color: var(--light-text);
+}
+
+/* Diseño 2 */
+.design-2 header {
+  padding: 20px 0;
+}
+
+.design-2 .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.design-2 .menu-btn,
+.design-2 .search-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.design-2 .day-selector {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.design-2 .day-temp {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.design-2 .day-temp.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.design-2 .main-weather {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.design-2 .sun-icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 20px;
+}
+
+.design-2 .temperature {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.design-2 .weather-description {
+  font-size: 1.5rem;
+}
+
+.design-2 .weather-graph {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: auto;
+  height: 200px;
+}
+
+/* Diseño 3 */
+.design-3 header {
+  padding: 20px 0;
+}
+
+.design-3 .nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.design-3 .back-btn,
+.design-3 .forward-btn {
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  padding: 8px;
+}
+
+.design-3 .day {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.design-3 .hourly-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.design-3 .hour-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+}
+
+.design-3 .time {
+  color: var(--light-text);
+}
+
+.design-3 .sun-icon.small {
+  width: 30px;
+  height: 30px;
+}
+
+/* Elementos comunes */
+.carousel-nav {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.dots {
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background: var(--white);
+}
+
+/* Responsive */
+@media (max-width: 390px) {
+  .app-container {
+    height: 100vh;
+  }
+
+  .weather-card {
+    border-radius: 0;
+  }
+}
